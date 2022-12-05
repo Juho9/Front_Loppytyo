@@ -29,6 +29,7 @@ export default function TrainingList() {
             " " +
             row.original.customer.firstname
           : row.groupByVal,
+      filterable: true,
     },
     {
       Header: "Date and time",
@@ -36,14 +37,17 @@ export default function TrainingList() {
       Cell: ({ value }) => {
         return format(parseISO(value), "dd/MM/yyyy HH:mm");
       },
+      filterable: true,
     },
     {
       Header: "Activity",
       accessor: "activity",
+      filterable: true,
     },
     {
       Header: "Duration",
       accessor: "duration",
+      filterable: true,
     },
   ];
 

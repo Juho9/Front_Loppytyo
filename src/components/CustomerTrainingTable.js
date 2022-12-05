@@ -31,7 +31,7 @@ export default function TrainingTable(props) {
                 {trainings.map((trainings, index) => (
                   <tr key={index}>
                     <td>
-                      {format(parseISO(trainings.date), "dd/MM/yyyy HH:mm")}{" "}
+                      {format(parseISO(trainings.date), "dd.MM.yyyy HH:mm")}{" "}
                     </td>
                     <td>{trainings.activity}</td>
                     <td>{trainings.duration} min</td>
