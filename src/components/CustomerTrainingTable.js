@@ -1,18 +1,30 @@
 import * as React from "react";
 import { format, parseISO } from "date-fns";
+import Button from "@mui/material/Button";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export default function TrainingTable(props) {
   const [trainings, setTrainings] = React.useState([]);
 
-  React.useEffect(() => {
+  React.useEffect(() => fetchTrainings(), []);
+
+  const fetchTrainings = () => {
     fetch(props.link)
       .then((response) => response.json())
       .then((data) => {
         setTrainings(data.content);
       });
-  }, []);
+  };
 
   console.log(trainings);
+
+  const deleteTraining = (data) => {
+    if (window.confirm("Are you sure you want to delete this training?")) {
+      fetch(data, { method: "DELETE" })
+        .then((res) => fetchTrainings())
+        .catch((err) => console.error(err));
+    }
+  };
 
   const trainingsMapped = () => {
     for (var i = 0, iLen = trainings.length; i < iLen; i++) {
@@ -35,6 +47,13 @@ export default function TrainingTable(props) {
                     </td>
                     <td>{trainings.activity}</td>
                     <td>{trainings.duration} min</td>
+                    <Button
+                      onClick={() => deleteTraining(trainings.links[0].href)}
+                      color="inherit"
+                      size="small"
+                    >
+                      <DeleteIcon fontSize="small" />
+                    </Button>
                   </tr>
                 ))}
               </tbody>
