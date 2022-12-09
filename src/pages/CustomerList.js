@@ -9,6 +9,7 @@ import AddCustomer from "../components/AddCustomer";
 import CustomerTrainings from "../components/CustomerTrainings";
 import UpdateCustomer from "../components/UpdateCustomer";
 import AddTrainingToCustomer from "../components/AddTrainingToCustomer";
+import ExportDataCSV from "../components/ExportDataCSV";
 
 export default function CustomerList() {
   const [openSnackBar, setOpenSnackBar] = React.useState(false);
@@ -18,7 +19,7 @@ export default function CustomerList() {
 
   const fetchData = () => {
     fetch("https://customerrest.herokuapp.com/api/customers")
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => setCustomers(data.content));
   };
 
@@ -145,10 +146,17 @@ export default function CustomerList() {
   return (
     <div>
       <h2>List that contains all customers</h2>
+
       <AddCustomer saveCustomer={saveCustomer} />
-      <div className="Table">
+      <ExportDataCSV />
+
+      <div
+        className="Table"
+        style={{ marginTop: "40px", marginBottom: "40px" }}
+      >
         <ReactTable data={customers} columns={columns} />
       </div>
+
       <Snackbar
         anchorOrigin={{
           vertical: "bottom",

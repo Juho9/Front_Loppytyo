@@ -47,13 +47,15 @@ export default function TrainingTable(props) {
                     </td>
                     <td>{trainings.activity}</td>
                     <td>{trainings.duration} min</td>
-                    <Button
-                      onClick={() => deleteTraining(trainings.links[0].href)}
-                      color="inherit"
-                      size="small"
-                    >
-                      <DeleteIcon fontSize="small" />
-                    </Button>
+                    <input>
+                      <Button
+                        onClick={() => deleteTraining(trainings.links[0].href)}
+                        color="inherit"
+                        size="small"
+                      >
+                        <DeleteIcon fontSize="small" />
+                      </Button>
+                    </input>
                   </tr>
                 ))}
               </tbody>

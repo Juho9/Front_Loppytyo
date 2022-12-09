@@ -51,6 +51,7 @@ export default function AddTrainingToCustomer(props) {
             name="date"
             value={training.date}
             onChange={handleInputChange}
+            required="true"
             fullWidth
           />
           <TextField
@@ -59,6 +60,7 @@ export default function AddTrainingToCustomer(props) {
             value={training.duration}
             onChange={handleInputChange}
             label="Duration"
+            required="true"
             fullWidth
           />
           <TextField
@@ -67,6 +69,7 @@ export default function AddTrainingToCustomer(props) {
             value={training.activity}
             onChange={handleInputChange}
             label="Activity"
+            required="true"
             fullWidth
           />
         </DialogContent>
