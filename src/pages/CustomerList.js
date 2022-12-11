@@ -1,6 +1,6 @@
 import React from "react";
-import ReactTable from "react-table";
-import "react-table/react-table.css";
+import ReactTable from "react-table-v6";
+import "react-table-v6/react-table.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Button from "@mui/material/Button";
 import Snackbar from "@mui/material/Snackbar";
