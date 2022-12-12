@@ -16,8 +16,6 @@ export default function TrainingTable(props) {
       });
   };
 
-  console.log(trainings);
-
   const deleteTraining = (data) => {
     if (window.confirm("Are you sure you want to delete this training?")) {
       fetch(data, { method: "DELETE" })
@@ -48,13 +46,15 @@ export default function TrainingTable(props) {
                     <td>{trainings.activity}</td>
                     <td>{trainings.duration} min</td>
 
-                    <Button
-                      onClick={() => deleteTraining(trainings.links[0].href)}
-                      color="inherit"
-                      size="small"
-                    >
-                      <DeleteIcon fontSize="small" />
-                    </Button>
+                    <td>
+                      <Button
+                        onClick={() => deleteTraining(trainings.links[0].href)}
+                        color="inherit"
+                        size="small"
+                      >
+                        <DeleteIcon fontSize="small" />
+                      </Button>
+                    </td>
                   </tr>
                 ))}
               </tbody>

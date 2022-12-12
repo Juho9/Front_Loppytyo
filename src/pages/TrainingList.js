@@ -18,7 +18,6 @@ export default function TrainingList() {
       .then((data) => {
         setTrainings(data);
       });
-    console.log(trainings);
   };
 
   const columns = [
@@ -82,7 +81,10 @@ export default function TrainingList() {
   return (
     <div>
       <h2>List that contains all activities</h2>
-      <div className="Table">
+      <div
+        className="Table"
+        style={{ marginTop: "40px", marginBottom: "40px" }}
+      >
         <ReactTable data={trainings} columns={columns} />
       </div>
       <Snackbar

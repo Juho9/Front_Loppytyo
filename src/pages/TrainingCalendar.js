@@ -15,7 +15,7 @@ export default function TrainingCalendar() {
       .then((res) => res.json())
       .then((data) => {
         var activitiesArray = [];
-        for (let i = 0; i < data.length; i++) {
+        for (var i = 0; i < data.length; i++) {
           activitiesArray.push({
             title:
               data[i].activity +
@@ -27,7 +27,6 @@ export default function TrainingCalendar() {
             end: moment(addMinutes(new Date(data[i].date), data[i].duration)),
           });
           setTrainings(activitiesArray);
-          console.log(data);
         }
       })
       .catch((err) => console.error(err));

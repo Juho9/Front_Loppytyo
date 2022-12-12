@@ -13,6 +13,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "date-fns": "^2.29.3",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-big-calendar": "^1.5.2",
     "react-csv": "^2.2.2",
@@ -21,6 +22,7 @@
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
     "react-table-v6": "^6.8.6",
+    "recharts": "^2.2.0",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
