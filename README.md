@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+## Final Assingment of Front-End Course
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Site is built using React.js and uses predetermined back-end, which is accessed via API. 
+
+Site has been deployed using Vercel:
+Url to Vercel: front-loppytyo.vercel.app
+
 
 ## Available Scripts
 
