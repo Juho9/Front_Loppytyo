@@ -3,7 +3,8 @@
 Site is built using React.js and uses predetermined back-end, which is accessed via API. 
 
 Site has been deployed using Vercel:
-Url to Vercel: front-loppytyo.vercel.app
+
+front-loppytyo.vercel.app
 
 
 ## Available Scripts
