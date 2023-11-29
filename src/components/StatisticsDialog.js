@@ -5,6 +5,7 @@ import DialogContent from "@mui/material/DialogContent";
 import { CartesianGrid, XAxis, YAxis, Bar, BarChart } from "recharts";
 import lodash from "lodash";
 import { Typography } from "@mui/material";
+import { url } from "../App";
 
 export default function StatisticsDialog() {
   const [open, setOpen] = React.useState(false);
@@ -18,13 +19,13 @@ export default function StatisticsDialog() {
   }, []);
 
   const fetchTrainings = () => {
-    fetch("https://customerrest.herokuapp.com/api/trainings")
+    fetch(url + "/api/trainings")
       .then((res) => res.json())
       .then((data) => setTrainings(data.content));
   };
 
   const fetchCustomers = () => {
-    fetch("https://customerrest.herokuapp.com/api/customers")
+    fetch(url + "/api/customers")
       .then((res) => res.json())
       .then((data) => setCustomers(data.content));
   };

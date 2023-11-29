@@ -17,6 +17,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 
 function App() {
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -169,5 +170,7 @@ function App() {
     </div>
   );
 }
+
+export const url = "https://traineeapp.azurewebsites.net"
 
 export default App;

@@ -3,6 +3,7 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import moment from "moment";
 import { addMinutes } from "date-fns";
+import { url } from "../App";
 
 export default function TrainingCalendar() {
   const [trainings, setTrainings] = React.useState([]);
@@ -11,7 +12,7 @@ export default function TrainingCalendar() {
   React.useEffect(() => fetchTrainingsData(), []);
 
   const fetchTrainingsData = () => {
-    fetch("https://customerrest.herokuapp.com/gettrainings")
+    fetch(url + "/gettrainings")
       .then((res) => res.json())
       .then((data) => {
         var activitiesArray = [];
@@ -44,3 +45,5 @@ export default function TrainingCalendar() {
     </div>
   );
 }
+
+//https://traineeapp.azurewebsites.net/api

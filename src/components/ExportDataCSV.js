@@ -1,6 +1,7 @@
 import * as React from "react";
 import { CSVLink } from "react-csv";
 import Button from "@mui/material/Button";
+import { url } from "../App";
 
 export default function ExportDataCSV() {
   const [customers, setCustomers] = React.useState([]);
@@ -8,7 +9,7 @@ export default function ExportDataCSV() {
   React.useEffect(() => fetchData(), []);
 
   const fetchData = () => {
-    fetch("https://customerrest.herokuapp.com/api/customers")
+    fetch(url + "/api/customers")
       .then((res) => res.json())
       .then((data) => {
         const parsedData = data.content.map(

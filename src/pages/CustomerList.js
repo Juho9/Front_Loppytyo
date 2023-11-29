@@ -9,7 +9,8 @@ import AddCustomer from "../components/AddCustomer";
 import CustomerTrainings from "../components/CustomerTrainings";
 import UpdateCustomer from "../components/UpdateCustomer";
 import AddTrainingToCustomer from "../components/AddTrainingToCustomer";
-import ExportDataCSV from "../components/ExportDataCSV";
+import ExportDataCSV from "../components/ExportDataCSV"
+import { url } from "../App";
 
 export default function CustomerList() {
   const [openSnackBar, setOpenSnackBar] = React.useState(false);
@@ -18,7 +19,7 @@ export default function CustomerList() {
   React.useEffect(() => fetchData(), []);
 
   const fetchData = () => {
-    fetch("https://customerrest.herokuapp.com/api/customers")
+    fetch(url + "/api/customers")
       .then((res) => res.json())
       .then((data) => setCustomers(data.content));
   };

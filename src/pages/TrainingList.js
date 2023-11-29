@@ -5,6 +5,7 @@ import "react-table-v6/react-table.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Button from "@mui/material/Button";
 import Snackbar from "@mui/material/Snackbar";
+import { url } from "../App";
 
 export default function TrainingList() {
   const [openSnackBar, setOpenSnackBar] = React.useState(false);
@@ -13,7 +14,7 @@ export default function TrainingList() {
   useEffect(() => fetchTrainingData(), []);
 
   const fetchTrainingData = () => {
-    fetch("https://customerrest.herokuapp.com/gettrainings")
+    fetch(url + "/gettrainings")
       .then((response) => response.json())
       .then((data) => {
         setTrainings(data);
